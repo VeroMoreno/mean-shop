@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/entidades/usuario';
+import { SessionService } from 'src/app/servicios/sessionService';
 
 @Component({
   selector: 'app-aceptacion-terminos',
-  templateUrl: './aceptacion-terminos.component.html',
-  styleUrls: ['./aceptacion-terminos.component.css']
+  templateUrl: './aceptacion-terminos.component.html'
 })
 export class AceptacionTerminosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sessionService:SessionService) { }
 
   ngOnInit(): void {
   }
 
+    public registrar():void {
+      // let usuario:Usuario = JSON.parse(sessionStorage.getItem("usuario"))
+      let usuario:Usuario = this.sessionService.getItem("usuario")
+      // Ajax
+      console.log(usuario)
+    }
 }
