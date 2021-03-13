@@ -18,3 +18,22 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 * Login
 * Register
 
+### Dependencies
+* validatorjs
+* nodemon
+* mongodb
+* express
+
+#### Notes about mongoDB
+If you installed mongoDB globally you'd have to link it using:
+```shell
+npm link mongodb
+```
+  1. Only connect mongodb at the beginning
+  2. You get an object that represents the database
+     - You ask for the scheme, it is an object that represents the scheme.
+  3. You ask the scheme for the collection:
+   - It is an object that represents the collection
+
+#### restClient
+Include calls to check endpoints

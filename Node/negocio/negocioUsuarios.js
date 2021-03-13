@@ -1,0 +1,54 @@
+//npm install validatorjs
+const Validator = require('validatorjs')
+const mongoDBUtil = require("../util/MongoDBUtil")
+
+let reglasUsrInsercion = {
+  nombre : 'required|min:3|max:40',
+  login  : 'required|min:5|max:15',
+  pw     : 'required|min:5|max:15',
+  correoE: 'required|email',
+}
+
+exports.comprobarLogin = function (login) {
+  return new Promise(function(resolve, reject){
+    mongoDBUtil.esquema.collection("usuarios").findOne( { login : login })
+    .then( resultado => {
+        if(resultado){
+            resolve(true)
+        } else {
+            resolve(false)
+        }
+    })
+    .catch( error => {
+        reject( { codigo:500, mensaje:'¡Error con la base de datos!' })
+    })
+})
+}
+
+exports.altaUsuario = function(usuario) {
+  return new Promise(function(resolve,reject) {
+    Validator.useLang('es')
+    let validador = new Validator(usuario, reglasUsrInsercion)
+    if (validador.fails()) {
+      console.log(validador.errors.errors)
+      reject({ codigo:400, mensaje: 'los datos del cliente son incorrectos'})
+      return
+    }
+    mongoDBUtil.esquema.collection('usuarios').insertOne(usuario)
+      .then(resultado => {
+          resolve(resultado.ops[0])
+      })
+      .catch(error => {
+        console.log(error)
+        reject({ codigo:500, mensaje: 'Error con la bbdd!'})
+      })
+  })
+}
+
+
+
+
+
+
+
+
