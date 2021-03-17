@@ -12,6 +12,11 @@ router.put("/usuarios/:id", modificarUsuario)
 
 exports.router = router
 
+//////////////////////////////////////
+//Funciones con la lógica de control//
+//////////////////////////////////////
+
+// Funciones con la lógica de control
 function comprobarLogin(request, response){
     let login = request.query.login
     negocioUsuarios.comprobarLogin(login)
@@ -28,13 +33,13 @@ function altaUsuario(request, response){
     let usuario = request.body
     negocioUsuarios.altaUsuario(usuario)
     .then(usrInsertado => {
+        response.statusCode = 201;
         response.json(usrInsertado)
     })
     .catch(error => {
         response.statusCode = error.codigo
         response.json(error)
     })
-    response.end("INSERTADO")
 }
 
 function bajaUsuario(request, response){

@@ -23,6 +23,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 * nodemon
 * mongodb
 * express
+* jsonwebtoken
 
 #### Notes about mongoDB
 If you installed mongoDB globally you'd have to link it using:
