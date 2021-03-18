@@ -17,7 +17,7 @@ exports.router = router
 //////////////////////////////////////
 
 // Funciones con la lógica de control
-function comprobarLogin(request, response){
+function comprobarLogin(request, response) {
     let login = request.query.login
     negocioUsuarios.comprobarLogin(login)
     .then(existe => {
@@ -29,7 +29,7 @@ function comprobarLogin(request, response){
     })
 }
 
-function altaUsuario(request, response){
+function altaUsuario(request, response) {
     let usuario = request.body
     negocioUsuarios.altaUsuario(usuario)
     .then(usrInsertado => {
@@ -42,8 +42,10 @@ function altaUsuario(request, response){
     })
 }
 
-function bajaUsuario(request, response){
+function bajaUsuario(request, response) {
+    response.end("USUARIO BORRADO")
 }
 
-function modificarUsuario(request, response){
+function modificarUsuario(request, response) {
+    response.end("USUARIO MODIFICADO")
 }

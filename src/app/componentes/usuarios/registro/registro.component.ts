@@ -21,7 +21,7 @@ export class RegistroComponent implements OnInit {
 
   public siguiente():void {
     // guarda el usuario
-    this.sessionService.setItem("usuario",this.usuario)
+    this.sessionService.setItem("usuario", this.usuario)
     // navega
     this.router.navigateByUrl("/login/aceptacion")
   }
