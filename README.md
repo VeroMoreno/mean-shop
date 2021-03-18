@@ -5,8 +5,11 @@ Basic shop developed with MEAN Stack
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Front server development
+Run `ng serve` for a front dev server. Navigate to `http://localhost:4200/`.
+
+## Back server development
+Run `nodemon aplicacion.js` for a back dev server. Navigate to `https://localhost:6001/`.
 
 ### Technologies
 * 💫 Mongo
@@ -17,6 +20,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ### Funcionality
 * Login
 * Register
+   * Observable - Configurable connection
+   * Authentication
+   * https
 
 ### Dependencies
 * validatorjs
