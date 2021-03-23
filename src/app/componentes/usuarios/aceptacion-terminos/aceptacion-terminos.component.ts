@@ -26,7 +26,7 @@ export class AceptacionTerminosComponent implements OnInit {
       }
       // let usuario:Usuario = JSON.parse(sessionStorage.getItem("usuario"))
       let usuario:Usuario = this.sessionService.getItem("usuario")
-      console.log("Aceptacion de terminos page usuario: ", usuario)
+
       this.usuariosService.altaUsuario(usuario)
       .subscribe(
         usuarioInsertado => this.router.navigateByUrl("/login"),

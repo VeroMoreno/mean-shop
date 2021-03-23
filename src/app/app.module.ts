@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@Angular/common/http';
@@ -31,6 +31,7 @@ import { CommonLoginComponent } from './componentes/common/common-login/common-l
     BrowserModule,
     FormsModule,                     // para el [(NgModel)]
     HttpClientModule,               // para la conexion
+    ReactiveFormsModule,
     RouterModule.forRoot(AppModule.rutasPrimerRouterOutlet)    // para los router outlet
   ],
   providers: [],

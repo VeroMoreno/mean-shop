@@ -9,14 +9,14 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">@</span>
             </div>
-            <input id="login" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            <input [(ngModel)]="usuario.login" id="login" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
         </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">**</span>
             </div>
-            <input id="pw" type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+            <input [(ngModel)]="usuario.pw" id="pw" type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
         </div>
         <div class="alert alert-danger">{{mensaje}}</div>
 

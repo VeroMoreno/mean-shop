@@ -8,7 +8,7 @@ const interceptorJWT = require('./autenticacion/interceptorJWT').interceptorJWT
 
 
 mongoDBUtil.conectarBBDD()
-.then((arrancarServidor))
+.then(arrancarServidor)
 .catch( function(error){
     console.log(error)
 })
@@ -33,7 +33,7 @@ function arrancarServidor(){
         response.header('Access-Control-Allow-Methods',
                         'GET,PUT,POST,DELETE,PATCH,OPTIONS')
         response.header("Access-Control-Allow-Headers",
-                        "Origin, X-Requested-With, Content-Type, Accept, Authorization")  
+                        "Origin, X-Requested-With, Content-Type, Accept, Authorization")
 
         if(request.method.toUpperCase() == 'OPTIONS'){
             console.log("preflight detectado")
