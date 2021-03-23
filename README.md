@@ -1,14 +1,11 @@
 <div style="text-align:center"><img src="./img/topshop.png" alt="background" style="width:70%; margin-left:auto; margin-right:auto; display: block; width:300px"/></div>
 
 # 🧿 TopShop
-Basic shop developed with MEAN Stack
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
-
+Small project with login, register, user authentication and user modification based in Mongo Express Angular & Node.js
 ## Front server development
 Run `ng serve` for a front dev server. Navigate to `http://localhost:4200/`.
-
 ## Back server development
+in cd node
 Run `nodemon aplicacion.js` for a back dev server. Navigate to `https://localhost:6001/`.
 
 ### Technologies
@@ -23,6 +20,8 @@ Run `nodemon aplicacion.js` for a back dev server. Navigate to `https://localhos
    * Observable - Configurable connection
    * Authentication
    * https
+* User Authentication
+* User modification
 
 ### Dependencies
 * validatorjs
