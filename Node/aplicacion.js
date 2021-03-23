@@ -45,10 +45,10 @@ function arrancarServidor(){
     })
 
     // logica de control CRUD
-    app.use(usuariosRouter)
+    app.use(interceptorJWT)
     // Autenticación jwt
     app.use(authRouter)
-    app.use(interceptorJWT)
+    app.use(usuariosRouter)
     //Quitamos la publicidad
     app.disable('x-powered-by')
     console.log("Arrancando el servidor...")

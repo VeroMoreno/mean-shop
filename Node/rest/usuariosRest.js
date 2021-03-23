@@ -47,15 +47,16 @@ function bajaUsuario(request, response) {
 }
 
 function modificarUsuario(request, response) {
-    /*let usuario = request.body
+    let usuario = request.body
     let id = request.params.id
     usuario._id = id
-    negocioUsuarios.modificarUsuario(usuario)
+    negocioUsuarios.modificarUsuario(usuario, request.autoridad)
     .then(usuarioModificado => {
         response.json(usuarioModificado)
     })
     .catch(err => {
+        console.log(err)
         response.statusCode = err.codigo
         response.json(err)
-    })*/
+    })
 }

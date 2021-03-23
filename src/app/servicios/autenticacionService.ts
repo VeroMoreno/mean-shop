@@ -51,6 +51,7 @@ public getJWT():string {
                     subscriber.complete()
                 },
                 error => {
+                    console.log("error autenticacion", error)
                     subscriber.error(error)
                     subscriber.complete()
                 }

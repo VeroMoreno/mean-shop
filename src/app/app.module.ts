@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@Angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@Angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CabeceraComponent } from './componentes/common/cabecera/cabecera.component';
@@ -14,6 +14,8 @@ import { PerfilComponent } from './componentes/usuarios/perfil/perfil.component'
 import { RegistroComponent } from './componentes/usuarios/registro/registro.component';
 import { CommonTiendaComponent } from './componentes/common/common-tienda/common-tienda.component';
 import { CommonLoginComponent } from './componentes/common/common-login/common-login.component';
+
+import { InterceptorJWT } from './interceptores/interceptorJWT';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,14 @@ import { CommonLoginComponent } from './componentes/common/common-login/common-l
     ReactiveFormsModule,
     RouterModule.forRoot(AppModule.rutasPrimerRouterOutlet)    // para los router outlet
   ],
-  providers: [],
+  providers: [
+    //Para registrar un interceptor HTTP:
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : InterceptorJWT,
+      multi : true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

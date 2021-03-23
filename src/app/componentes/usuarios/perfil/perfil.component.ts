@@ -19,9 +19,7 @@ export class PerfilComponent implements OnInit {
 
   constructor(
     private formBuilder:FormBuilder,
-    private autenticationService:AutenticacionService,
-    private usuarioService:UsuariosService,
-    private router:Router,
+    private autenticationService:AutenticacionService
   ) {
     // obtener el usuario si ya se han metido datos en el pasado
     let usuario:Usuario = autenticationService.getUsuario()

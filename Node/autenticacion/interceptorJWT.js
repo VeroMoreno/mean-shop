@@ -45,5 +45,15 @@ exports.interceptorJWT = function(request, response, next){
         response.json(error)
         return
     }
+
+    //Creamos la autoridad
+    let autoridad = {
+        _id   : token._id,
+        login : token.login,
+        rol   : token.rol
+    }
+    //Se la asignamos al request
+    request.autoridad = autoridad
+
     next()
 }
