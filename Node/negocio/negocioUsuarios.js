@@ -60,13 +60,11 @@ exports.comprobarLogin = function (login) {
 // POST /usuarios - res: {json}
 exports.altaUsuario = function(usuario) {
   return new Promise(function(resolve,reject) {
-    Validator.useLang('es')
-    let validador = new Validator(usuario, reglasUsrInsercion)
-    if (validador.fails()) {
-      console.log(validador.errors.errors)
-      reject({ codigo:400, mensaje: 'los datos del cliente son incorrectos'})
+    if(!validadorUtil.validarObjeto(usuario, reglasUsrInsercion)){
       return
-    }
+  }
+    //Le asignamos el rol al usuario
+    usuario.rol = 'CLIENTE'
 
     let coleccionUsuarios = mongoDBUtil.esquema.collection('usuarios')
     exports.comprobarLogin(usuario.login)
